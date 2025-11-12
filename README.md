@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Catapult SDET - API Automation Test
 
 Author: Steven Lau softwaredev@stevenlau.net
