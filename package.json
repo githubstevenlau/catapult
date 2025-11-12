@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "npm test"
+    "test": "jest"
   },
   "author": "Steven Lau <softwaredev@stevenlau.net> (https://githubstevenlau.github.io/software_dev/)",
   "bugs": {
