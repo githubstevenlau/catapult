@@ -1,0 +1,19 @@
+{
+  "name": "catapult",
+  "description": "SDET API Automation",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Steven Lau <softwaredev@stevenlau.net> (https://githubstevenlau.github.io/software_dev/)",
+  "bugs": {
+    "url": "https://github.com/githubstevenlau/catapult/issues"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "jest": "^30.2.0",
+    "pactum": "^3.8.0",
+    "uuid": "^13.0.0"
+  }
+}
