@@ -16,16 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v2
-        with:
-          node-version: '14'
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Run the tests
       - name: Run PactumJS tests
         run: npm test
