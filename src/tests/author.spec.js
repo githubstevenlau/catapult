@@ -41,29 +41,25 @@ describe('Query author tests', () => {
 
 describe('Create author tests', () => {
 
-    const randomAuthor = faker.book.randomAuthor
-    const fixedAuthor = 'Charles Dickens'
+    const randomAuthor = faker.book.author()
 
-    // todo fix: pactumjs withGraphQLVariables not being passed through to query
     test('Add a new author and search', async () => {
         await spec()
         .post(url)
         .withGraphQLQuery(`
-            mutation createAuther {
-                createAuther(createAutherInput: { name: "Charles Dickens" }) {
+            mutation createAuther($name: String!) {
+                createAuther(createAutherInput: { name: $name }) {
                     id
                     name
                 }
             }
          `)
-         /*
          .withGraphQLVariables({
-            'randomAuthor': randomAuthor
+            "name": randomAuthor
          })
-         */
         .expectHeader('content-type', 'application/json; charset=utf-8')
         .expectStatus(200)
-        .expectJsonMatch('data.createAuther.name', fixedAuthor)
+        .expectJsonMatch('data.createAuther.name', randomAuthor)
         .stores('authorId', 'data.createAuther.id')
 
         await spec()
