@@ -94,7 +94,7 @@ reflect badly on the company. Should be relatively easy to fix.
 
 - Query: Performing a read query on a non-existant item results in a 200 response code but a message
 with code INTERNAL_SERVER_ERROR. This may or may not be a defect and depends on how much information is
-wished to provided to the endpoint users, particularly from a security or usability perspective.
+wished to be provided to the endpoint users, particularly from a security or usability perspective.
 For usability, it would be helpful to tell users that the requested resource does not exist return
 No Content or Not Found responses (may also depend on verb). For security one aim may be to provide as
 little information as possible and simply return a 200 saying that the request was valid but return
