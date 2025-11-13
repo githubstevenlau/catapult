@@ -83,23 +83,26 @@ describe('Create author tests', () => {
 
 describe('Remove author tests', () => {
 
-    const randomAuthor = faker.book.randomAuthor
-    // todo fix to use faker for author name
+    const randomAuthor = faker.book.author()
+
     test('Add new author and then remove and verify', async () => {
 
         await spec()
         .post(url)
         .withGraphQLQuery(`
-            mutation createAuther {
-                createAuther(createAutherInput: { name: "Charles Dickens" }) {
+            mutation createAuther($name: String!) {
+                createAuther(createAutherInput: { name: $name }) {
                     id
                     name
                 }
             }
          `)
+         .withGraphQLVariables({
+            "name": randomAuthor
+         })
         .expectHeader('content-type', 'application/json; charset=utf-8')
         .expectStatus(200)
-        .expectJsonMatch('data.createAuther.name', 'Charles Dickens')
+        .expectJsonMatch('data.createAuther.name', randomAuthor)
         .stores('authorId', 'data.createAuther.id')
 
         await spec()
