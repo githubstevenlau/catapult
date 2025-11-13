@@ -1,14 +1,20 @@
 {
   "name": "catapult",
   "description": "SDET API Automation",
+  "homepage": "https://github.com/githubstevenlau/catapult#readme",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "test": "jest"
   },
   "author": "Steven Lau <softwaredev@stevenlau.net> (https://githubstevenlau.github.io/software_dev/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/githubstevenlau/catapult.git"
+  },
   "bugs": {
-    "url": "https://github.com/githubstevenlau/catapult/issues"
+    "url": "https://github.com/githubstevenlau/catapult/issues",
+    "email": "catapult-bugs@stevenlau.net"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.9.0",
