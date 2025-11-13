@@ -139,27 +139,34 @@ describe('Remove author tests', () => {
 
 describe('Author negative tests', () => {
 
+    const removeAuthorId = faker.string.uuid();
+
     test('Remove author that does not exist', async () => {
         await spec()
         .post(url)
         .withGraphQLQuery(`
-            mutation removeAuther {
-                removeAuther(id: { id: "56d6f01a-adfb-48de-8420-76e7f54262ca" }) {
+            mutation removeAuther($id: String!) {
+                removeAuther(id: { id: $id }) {
                     id
                 }
             }
         `)
+         .withGraphQLVariables({
+            "id": removeAuthorId
+         })
         .expectHeader('content-type', 'application/json; charset=utf-8')
         .expectStatus(200)   
         .expectBodyContains('Invalid')
     })
 
+    const queryAuthorId = faker.string.uuid();
+
     test('Query author that does not exist', async () => {
         await spec()
         .post(url)
         .withGraphQLQuery(`
-            query {
-                auther(id: { id: "56d6f01a-adfb-48de-8420-76e7f54262ca" } ){
+            query($id: String!) {
+                auther(id: { id: $id }) {
                     id
                     name
                     posts {
@@ -169,6 +176,9 @@ describe('Author negative tests', () => {
                 }
             }
         `)
+         .withGraphQLVariables({
+            "id": queryAuthorId
+         })
         .expectStatus(200)
         .expectHeader('content-type', 'application/json; charset=utf-8')
         .expectBodyContains('Cannot return null for non-nullable field Query.auther.')
