@@ -19,9 +19,9 @@ development and early testing.
 tests for mandatory and nullable fields. Test for acceptable lengths for the field entries.
 2. Test functionality for author posts: test for create, read, update and delete for post items
 ### Book
-1. Basic create, read, update and delete functionality for items in the Book object
+1. Basic create, read, update and delete functionality for items in the Book object.
 
-### Negative test
+### Negative tests
 These are tests that ensure that there is correct error handling. For example:
 - read, update and delete on items that do not exist
 
@@ -92,7 +92,7 @@ reflect badly on the company. Should be relatively easy to fix.
 
 - Schema: able to add a book without an author: should be validation to ensure that this is not possible
 
-- Query: Performing a read query on a non-existant item results in a 200 response code but a message
+- Query: Performing a read query on a non-existent item results in a 200 response code but a message
 with code INTERNAL_SERVER_ERROR. This may or may not be a defect and depends on how much information is
 wished to be provided to the endpoint users, particularly from a security or usability perspective.
 For usability, it would be helpful to tell users that the requested resource does not exist return
