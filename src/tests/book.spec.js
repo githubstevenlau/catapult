@@ -1,5 +1,4 @@
 const { faker } = require('@faker-js/faker')
-const { randomUUID } = require('crypto')
 const { spec } = require('pactum')
 
 url = 'http://books.tc.staging.catapult.com:4000/graphql'

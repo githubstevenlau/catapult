@@ -19,7 +19,6 @@
   "devDependencies": {
     "@faker-js/faker": "^9.9.0",
     "jest": "^30.2.0",
-    "pactum": "^3.8.0",
-    "uuid": "^13.0.0"
+    "pactum": "^3.8.0"
   }
 }
