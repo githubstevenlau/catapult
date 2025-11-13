@@ -237,7 +237,7 @@ describe('Update book test', () => {
         `)
         .expectStatus(200)
         .expectHeader('content-type', 'application/json; charset=utf-8')
-        .expectJsonMatch('data.updateBook.title', newRandomTitle)
+        .expectJsonMatch('data.updateBook.title', updatedTitle)
     })
 })
 
