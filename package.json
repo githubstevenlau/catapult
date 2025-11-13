@@ -4,6 +4,7 @@
   "homepage": "https://github.com/githubstevenlau/catapult#readme",
   "version": "1.0.0",
   "type": "module",
+  "keywords": ["graphql", "api", "pactum"],
   "scripts": {
     "test": "jest"
   },
