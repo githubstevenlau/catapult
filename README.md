@@ -49,6 +49,7 @@ and for use within the CI pipelines
 
 ## Part 3: Load testing
 
+The tests have been implemented using k6.
 Load testing scripts added for query and mutations requests:
 - query: graphql_query_test.js
 - mutation: graphql_mutation_test.js
